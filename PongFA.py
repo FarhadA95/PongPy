@@ -141,7 +141,12 @@ def paddleA_up():
     
     y += 20 #20 pixels to one y-movement
     
-    paddleA.sety(y)
+    ymax = 300-30
+    
+    if y <= ymax:
+        
+        paddleA.sety(y)
+
     
 def paddleA_down():
     
@@ -149,7 +154,11 @@ def paddleA_down():
     
     y -= 20 #20 pixels to one y-movement
     
-    paddleA.sety(y)
+    ymin = -300+30
+    
+    if y >= ymin:
+        
+        paddleA.sety(y)
 
 def paddleB_up():
     
@@ -157,7 +166,11 @@ def paddleB_up():
     
     y += 20 #20 pixels to one y-movement
     
-    paddleB.sety(y)
+    ymax = 300-30
+    
+    if y <= ymax:
+        
+        paddleB.sety(y)
 
 def paddleB_down():
     
@@ -165,7 +178,11 @@ def paddleB_down():
     
     y -= 20 #20 pixels to one y-movement
     
-    paddleB.sety(y)
+    ymin = -300+30
+    
+    if y >= ymin:
+        
+        paddleB.sety(y)
 
 #Keyboard binding
     
