@@ -13,6 +13,7 @@ import turtle
 
 import os 
 
+
 window = turtle.Screen()
 
 window.title("Pong")
@@ -116,6 +117,19 @@ penB.goto(x=300, y=260)
 
 penB.write(arg="Player B: 0", align='center', font=("Comic Sans", 35, "bold"))
 
+#winner message
+winner = turtle.Turtle()
+
+winner.speed(speed=0)
+
+winner.color("white")
+
+winner.penup()
+
+winner.hideturtle()
+
+winner.goto(x=0,y=0)
+
 
 #Line
 
@@ -200,7 +214,9 @@ window.onkeypress(paddleB_down, "Down")
 
 #Main loop of the game
 
-while True:
+game_on = True
+
+while game_on:
     
     window.update()
     
@@ -277,3 +293,19 @@ while True:
         ball.dx *= -1
         
         os.system("afplay sound69.wav&")
+
+
+    if scoreA == 2:
+    
+        winner.write(arg="PLAYER A WINS!", align='center',font=("Comic Sans", 100, "bold") )
+        
+        turtle.bye()
+        
+        
+    elif scoreB == 2:
+        
+        winner.write(arg="PLAYER B WINS!", align='center',font=("Comic Sans", 100, "bold") )
+        
+        turtle.bye()
+        
+        
